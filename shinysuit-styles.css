@@ -1,3 +1,180 @@
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/firasans-light-webfont.woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/firasans-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/firasans-medium-webfont.woff");
+}
+
+/* Technically, firasans-bold should be font-weight 700.
+   However, firasans-medium is more appropriate for regular
+   use as a "bold" font, and font-weight: bold is the same
+   as font-weight: 700. Thus it looks much better to make
+   firasans-medium font-weight 700.
+   Where firasans-bold is required, use font-weight: 900 instead.*/
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/firasans-medium-webfont.woff");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/firasans-bold-webfont.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Gustan-Thin.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/Gustan-Light.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Gustan-Medium.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/Gustan-Bold.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/Gustan-Extrabold.woff");
+}
+
+@font-face {
+  font-family: "Gustan";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Gustan-Black.woff");
+}
+
+h1, h2, h3, h4, h5, h6 {
+   line-height: 1.115em;
+   padding-top: 10px;
+   margin-top: 0px;
+   margin-bottom: 15px;
+}
+
+h1 {
+   font-family: "Gustan",Helvetica,Arial,sans-serif;
+   font-size: 42px;
+   font-weight: 100;
+   color: #414042;
+   margin-bottom: 30px;
+}
+
+h2 {
+   font-family: "Gustan",Helvetica,Arial,sans-serif;
+   font-size: 31.3667px;
+   font-weight: 100;
+   color: #414042;
+}
+
+h3 {
+   font-family: "Gustan",Helvetica,Arial,sans-serif;
+   font-size: 25px;
+   font-weight: 100;
+   color: #414042;
+}
+
+p.intro {
+   font-family: 'Gustan', Helvetica, Arial, sans-serif;
+   font-weight: 200;
+   font-size: 19px;
+   color: #414042;
+}
+
+.intro-divider {
+   height: 6px;
+   background: transparent linear-gradient(to right, #157BA3 0%, #96D602 100%) repeat scroll 0% 0%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+h4 {
+   font-family: "Gustan",Helvetica,Arial,sans-serif;
+   font-size: 17.37px;
+   font-weight: 600;
+   color: #414042;
+}
+
+h5 {
+   font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+   font-size: 15px;
+   font-weight: 900;
+   color: #000000;
+}
+
+h6 {
+   font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+   font-size: 14.3px;
+   font-weight: 500;
+   color: #000000;
+}
+
+body {
+   font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+   font-size: 14px;
+   font-weight: 300;
+   color: #000000;
+}
+
+.small {
+   font-size: 12px;
+}
+
+.readmore {
+   font-family: "Gustan",Helvetica,Arial,sans-serif;
+   font-size: 12px;
+   font-weight: 700;
+   color: #414042;
+}
+
+.suit-topbar {
+   height: 6px;
+   /*background: transparent linear-gradient(to right, #157BA3 0%, #96D602 100%) repeat scroll 0% 0%;*/
+   margin-left: -15px;
+   margin-right: -15px;
+}
+
+.suit-brand {
+   position: absolute;
+   height: auto;
+}
+
 body {
    min-width: 800px;
 }
@@ -328,10 +505,20 @@ div.box-timeout {
 /*
    Navbar styles
 */
-/* Fix width (manually adjusted)
-   Looks better than the automatic widths if fixed correctly. */
+
+.navbar {
+  min-height: 0!important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: 0!important;
+}
+
 .navbar-default > .container {
-   width: 720px;
+   width: auto!important;
+   float: right!important;
+   top: 0;
+   margin-right: 0;
+   margin-left: auto;
+   z-index: 900;
 }
 
 /* Hide title and arrows */
@@ -377,6 +564,7 @@ div.box-timeout {
 /* Drop-down navigation box */
 .dropdown-menu {
    background-color: #e6e6e6;
+   position: absolute;
 }
 /* Drop-down navigation buttons */
 .dropdown-menu > li > a:hover {
