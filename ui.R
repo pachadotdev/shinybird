@@ -2,7 +2,7 @@ shinyUI(
   suitPage("My Organization's Dashboard",
     thead = tagList(
       tags$head(
-        includeCSS("shinysuit-styles.css"),
+        includeCSS("shinysuit-styles.min.css"),
         tags$script(src = "jquery-ui-1-11-4.min.js"),
         ## Add jQuery UI tooltips
         ## Use: have class "jui-tip" and
