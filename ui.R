@@ -5,15 +5,15 @@ shinyUI(
       suitHeader(logo = "logo.svg",
                  href = "http://www.duckduckgo.com/",
                  caption = "Caption for the logo."),
-      color = "blue"
+      color = color
     ),
     
     tabPanel(
       "Start",
       frontPage(
-         frontTitle("My Organization's Dashboard", "Much content, very nice", color = "blue"),
+         frontTitle("My Organization's Dashboard", "Much content, very nice", color = color),
          
-         introTitle("Foo Bar", color = "blue"),
+         introTitle("Foo Bar", color = color),
          
          tags$p("This is a paragraph."),
          tags$p("This is another paragraph."),
@@ -23,23 +23,15 @@ shinyUI(
             tags$a(
                target = "_blank",
                href = "http://duckduckgo.com",
-               div(
-                  class = "float box box-more",
-                  tags$p(class = "intro", "Find out more"),
-                  tags$p("More content.")
-               )
+               suitBoxSmall(title = "Find out more",
+                            text = "much more content")
             ),
             tags$a(
                target = "_blank",
                href = "http://duckduckgo.com",
-               div(
-                  class = "float box box-rear",
-                  tags$p(
-                    tags$img(class = "rear-preview", src = "logo.svg"),
-                    "Here's", span(class = "bold", "much more content"),
-                    "with plenty of detail."
-                  )
-               )
+               suitBoxLarge(title = "Find out more",
+                       text = "much more content", 
+                       image = "logo.svg")
             )
          ),
          
@@ -56,19 +48,19 @@ shinyUI(
     
     navbarMenu(
       "Tab 1",
-      tabPanelWithTitle("Subject 1", "all about subject 1", color = "red",
+      tabPanelWithTitle("Subject 1", "all about subject 1", color = color,
              h1("contents"),
              h2("goes here")
              ), 
-      tabPanelWithTitle("Subject 2", "all about subject 2", color = "red",
+      tabPanelWithTitle("Subject 2", "all about subject 2", color = color,
              h1("contents"),
              h2("goes here")
              ),
-      tabPanelWithTitle("Subject 3", "all about subject 3", color = "red",
+      tabPanelWithTitle("Subject 3", "all about subject 3", color = color,
              h1("contents"),
              h2("goes here")
              ),
-      tabPanelWithTitle("Subject 4", "all about subject 4", color = "red",
+      tabPanelWithTitle("Subject 4", "all about subject 4", color = color,
              h1("contents"),
              h2("goes here")
              )
@@ -76,19 +68,19 @@ shinyUI(
     
     navbarMenu(
       "Tab 2",
-      tabPanelWithTitle("Subject 1", "all about subject 1", color = "red",
+      tabPanelWithTitle("Subject 1", "all about subject 1", color = color,
              h1("contents"),
              h2("goes here")
       ), 
-      tabPanelWithTitle("Subject 2", "all about subject 2", color = "red",
+      tabPanelWithTitle("Subject 2", "all about subject 2", color = color,
              h1("contents"),
              h2("goes here")
       ),
-      tabPanelWithTitle("Subject 3", "all about subject 3", color = "red",
+      tabPanelWithTitle("Subject 3", "all about subject 3", color = color,
              h1("contents"),
              h2("goes here")
       ),
-      tabPanelWithTitle("Subject 4", "all about subject 4", color = "red",
+      tabPanelWithTitle("Subject 4", "all about subject 4", color = color,
              h1("contents"),
              h2("goes here")
       )
