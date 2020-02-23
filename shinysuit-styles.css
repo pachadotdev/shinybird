@@ -36,9 +36,23 @@ p.intro {
   color: #414042;
 }
 
-.intro-divider {
+.intro-divider-red {
   height: 6px;
   background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.intro-divider-green {
+  height: 6px;
+  background: transparent linear-gradient(to right, #05878a 0%, #69b7b8 100%) repeat scroll 0% 0%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.intro-divider-blue {
+  height: 6px;
+  background: transparent linear-gradient(to right, #0074cc 0%, #66abe0 100%) repeat scroll 0% 0%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -93,6 +107,7 @@ body {
   float: right !important;
   right: 0 !important;
   height: auto;
+  z-index: 1200;
 }
 
 body {
@@ -112,39 +127,44 @@ div.row-even {
   background-color: #EAEAEA;
 }
 
-h3.input-header {
+h1.input-header {
   border: 1px solid #D3D3D3;
   background: #E6E6E6;
   padding-top: 0px;
   padding-left: 4px;
-  font-size: 110%;
   line-height: 1.5;
 }
 
-h3.tabTitle {
+h1.tabTitle {
+  font-size: 48px;
+  font-weight: 400;
   text-align: center;
   color: #4D4D4D;
+  margin-bottom: 0;
 }
 
-p.tabDesc {
+h2.tabDesc {
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
   padding-left: 4em;
   padding-right: 4em;
   padding-bottom: 10px;
 }
 
-div.tabTitlePanel-end {
+div.tabTitlePanel-end-red {
   background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
   height: 6px;
 }
 
-div.ggvis-title {
-  width: 100%;
-  text-align: center;
-  font-size: small;
-  font-weight: bold;
-  padding-left: 20%;
-  padding-right: 20%;
+div.tabTitlePanel-end-green {
+  background: transparent linear-gradient(to right, #05878a 0%, #69b7b8 100%) repeat scroll 0% 0%;
+  height: 6px;
+}
+
+div.tabTitlePanel-end-blue {
+  background: transparent linear-gradient(to right, #0074cc 0%, #66abe0 100%) repeat scroll 0% 0%;
+  height: 6px;
 }
 
 div.float {
@@ -243,34 +263,12 @@ div.divplothalff-label>span {
   padding-right: 1em;
 }
 
-div.divwell div.dylegend {
-  margin-right: -18px;
-}
-
-div.dylegend>span.highlight {
-  font-size: larger;
-  font-weight: bold;
-}
-
-div.divwell div.dylegend>span.highlight {
-  padding-left: 0.5em;
-  border-left: 0.5em solid #666;
-}
-
-div.dygraph-label {
-  font-size: small;
-}
-
 div.shiny-datatable-output td:first-child, div.shiny-datatable-output th:first-child {
   text-align: left;
 }
 
 div.shiny-datatable-output td, div.shiny-datatable-output th {
   text-align: right;
-}
-
-div.dydownload-group ul {
-  margin-left: -20px;
 }
 
 .ui-tooltip {
@@ -359,26 +357,35 @@ span.exans {
   color: #00B5E2;
 }
 
-div.frontexcon {
-  padding: 10px;
-  background-color: #FAFAFA;
-}
-
-div.frontdycon {
-  height: 620px;
-}
-
-div.frontdycon form.well {
-  height: 250px;
-}
-
 div.front-banner {
   overflow: visible;
   height: 342px;
 }
 
-div.front-banner>div.imgcon {
+div.front-banner>div.imgcon-red {
   background-color: #e44c65;
+  background-image: url('pattern-triangle.png');
+  position: absolute;
+  margin-top: -20px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: inherit;
+}
+
+div.front-banner>div.imgcon-green {
+  background-color: #05878a;
+  background-image: url('pattern-triangle.png');
+  position: absolute;
+  margin-top: -20px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: inherit;
+}
+
+div.front-banner>div.imgcon-blue {
+  background-color: #0074cc;
   background-image: url('pattern-triangle.png');
   position: absolute;
   margin-top: -20px;
@@ -396,6 +403,14 @@ div.front-banner>div.hcon {
 
 div.front-banner>div.hcon>h1 {
   font-weight: 400;
+  color: white;
+  margin-bottom: 0px;
+  padding-top: 0px
+}
+
+div.front-banner>div.hcon>h2 {
+  font-weight: 400;
+  font-style: italic;
   color: white;
   margin-bottom: 0px;
   padding-top: 0px
