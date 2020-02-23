@@ -35,7 +35,7 @@ shinyUI(
                div(
                   class = "float box box-rear",
                   tags$p(
-                    tags$img(class = "rear-preview", src = "REAR-cover-2015.jpg"),
+                    tags$img(class = "rear-preview", src = "logo.svg"),
                     "Here's", span(class = "bold", "much more content"),
                     "with plenty of detail."
                   )
@@ -46,7 +46,7 @@ shinyUI(
          div(
             class = "box box-timeout",
             tags$p(
-               tags$span(class = "bold", "PLEASE NOTE:"),
+              boldText("PLEASE NOTE:"),
                "This app may time-out if left idle too long, which will cause the screen to grey-out.",
                "To use the app again, refresh the page. This will reset all previously-selected input options."
             )

@@ -86,7 +86,7 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
 
 frontPage <- function(...) {
   div(
-    class = "frontp",
+    class = "front-page",
     ...
   )
 }
@@ -102,7 +102,7 @@ frontTitle <- function(title, subtitle = NULL, color = "red") {
 
 introTitle <- function(text, color = "red") {
   div(
-    tags$p(class = "intro", text),
+    tags$h2(class = "intro", text),
     div(class = paste0("intro-divider-", color))
   )
 }
@@ -145,4 +145,12 @@ suitHead <- function(..., color = "red") {
   )
   class(lst) <- c("shiny.tag.list", "list")
   return(lst)
+}
+
+boldText <- function(text) {
+  HTML(sprintf("<b>%s</b>", text))
+}
+
+italicText <- function(text) {
+  HTML(sprintf("<i>%s</i>", text))
 }
