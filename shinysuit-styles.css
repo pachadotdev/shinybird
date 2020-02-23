@@ -1,3 +1,5 @@
+@import url(https://code.cdn.mozilla.net/fonts/fira.css);
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.115em;
   padding-top: 10px;
@@ -8,50 +10,50 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 42px;
-  font-weight: 100;
+  font-weight: 300;
   color: #414042;
   margin-bottom: 30px;
 }
 
 h2 {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-size: 31.3667px;
-  font-weight: 100;
+  font-size: 32px;
+  font-weight: 300;
   color: #414042;
 }
 
 h3 {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 25px;
-  font-weight: 100;
+  font-weight: 300;
   color: #414042;
 }
 
 p.intro {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  font-size: 19px;
+  font-weight: 300;
+  font-size: 20px;
   color: #414042;
 }
 
 .intro-divider {
   height: 6px;
-  background: transparent linear-gradient(to right, #157BA3 0%, #96D602 100%) repeat scroll 0% 0%;
+  background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 h4 {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-size: 17.37px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: #414042;
 }
 
 h5 {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 700;
   color: #000000;
 }
 
@@ -82,7 +84,6 @@ body {
 
 .suit-topbar {
   height: 6px;
-  /*background: transparent linear-gradient(to right, #157BA3 0%, #96D602 100%) repeat scroll 0% 0%;*/
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -129,12 +130,12 @@ p.tabDesc {
   text-align: center;
   padding-left: 4em;
   padding-right: 4em;
+  padding-bottom: 10px;
 }
 
 div.tabTitlePanel-end {
-  background-image: url("breadcrumb-bg.png");
-  background-repeat: repeat-x;
-  height: 8px;
+  background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
+  height: 6px;
 }
 
 div.ggvis-title {
@@ -394,7 +395,7 @@ div.front-banner>div.hcon {
 }
 
 div.front-banner>div.hcon>h1 {
-  font-weight: 200;
+  font-weight: 400;
   color: white;
   margin-bottom: 0px;
   padding-top: 0px
@@ -425,8 +426,7 @@ div.box-more {
 }
 
 div.box-more:hover {
-  background-color: #3F3F3F;
-  border-image: linear-gradient(to right, #157BA3 0%, #96D602 100%) 1 1 stretch;
+  background-color: #abb9c5;
 }
 
 div.box-more:hover>p {
@@ -437,14 +437,13 @@ div.box-rear {
   float: right;
   width: 64%;
   color: #3F3F3F;
-  background-color: #F2F2F2;
+  background-color: #d6f7f6;
   border-top: 2px solid transparent;
 }
 
 div.box-rear:hover {
   color: #FFFFFF;
-  background-color: #3F3F3F;
-  border-image: linear-gradient(to right, #157BA3 0%, #96D602 100%) 1 1 stretch;
+  background-color: #abc5c4;
 }
 
 .bold {
@@ -484,9 +483,9 @@ div.box-timeout {
 
 /* Set fonts */
 .navbar-default .navbar-nav>li>a, .dropdown-menu>li>a {
-  font-family: 'Gustan', Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 300;
   color: #666666;
 }
 
@@ -520,7 +519,7 @@ div.box-timeout {
 
 /* Drop-down navigation box */
 .dropdown-menu {
-  background-color: #e6e6e6;
+  background-color: #fafafa;
 }
 
 /* Drop-down navigation buttons */
