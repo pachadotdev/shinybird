@@ -48,23 +48,9 @@ p.intro {
   color: #414042;
 }
 
-.intro-divider-red {
+.intro-divider {
   height: 6px;
   background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.intro-divider-green {
-  height: 6px;
-  background: transparent linear-gradient(to right, #05878a 0%, #69b7b8 100%) repeat scroll 0% 0%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.intro-divider-blue {
-  height: 6px;
-  background: transparent linear-gradient(to right, #0074cc 0%, #66abe0 100%) repeat scroll 0% 0%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -142,18 +128,8 @@ h2.tabDesc {
   padding-bottom: 10px;
 }
 
-div.tabTitlePanel-end-red {
+div.tabTitlePanel-end {
   background: transparent linear-gradient(to right, #e44c65 0%, #ee93a2 100%) repeat scroll 0% 0%;
-  height: 6px;
-}
-
-div.tabTitlePanel-end-green {
-  background: transparent linear-gradient(to right, #05878a 0%, #69b7b8 100%) repeat scroll 0% 0%;
-  height: 6px;
-}
-
-div.tabTitlePanel-end-blue {
-  background: transparent linear-gradient(to right, #0074cc 0%, #66abe0 100%) repeat scroll 0% 0%;
   height: 6px;
 }
 
@@ -202,30 +178,8 @@ div.front-banner {
   margin-bottom: 1.5em;
 }
 
-div.front-banner>div.imgcon-red {
+div.front-banner>div.imgcon {
   background-color: #e44c65;
-  background-image: url('pattern-triangle.png');
-  position: absolute;
-  margin-top: -20px;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: inherit;
-}
-
-div.front-banner>div.imgcon-green {
-  background-color: #05878a;
-  background-image: url('pattern-triangle.png');
-  position: absolute;
-  margin-top: -20px;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: inherit;
-}
-
-div.front-banner>div.imgcon-blue {
-  background-color: #0074cc;
   background-image: url('pattern-triangle.png');
   position: absolute;
   margin-top: -20px;

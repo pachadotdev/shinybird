@@ -11,9 +11,9 @@ shinyUI(
     tabPanel(
       "Start",
       frontPage(
-         frontTitle("My Organization's Dashboard", "Much content, very nice", color = color),
+         frontTitle("My Organization's Dashboard", "Much content, very nice"),
          
-         introTitle("Foo Bar", color = color),
+         introTitle("Foo Bar"),
          
          tags$p("This is a paragraph."),
          tags$p("This is another paragraph."),
@@ -48,19 +48,19 @@ shinyUI(
     
     navbarMenu(
       "Tab 1",
-      tabPanelWithTitle("Subject 1", "all about subject 1", color = color,
+      tabPanelWithTitle("Subject 1", "all about subject 1",
              h1("contents"),
              h2("goes here")
              ), 
-      tabPanelWithTitle("Subject 2", "all about subject 2", color = color,
+      tabPanelWithTitle("Subject 2", "all about subject 2",
              h1("contents"),
              h2("goes here")
              ),
-      tabPanelWithTitle("Subject 3", "all about subject 3", color = color,
+      tabPanelWithTitle("Subject 3", "all about subject 3",
              h1("contents"),
              h2("goes here")
              ),
-      tabPanelWithTitle("Subject 4", "all about subject 4", color = color,
+      tabPanelWithTitle("Subject 4", "all about subject 4",
              h1("contents"),
              h2("goes here")
              )
@@ -68,19 +68,19 @@ shinyUI(
     
     navbarMenu(
       "Tab 2",
-      tabPanelWithTitle("Subject 1", "all about subject 1", color = color,
+      tabPanelWithTitle("Subject 1", "all about subject 1",
              h1("contents"),
              h2("goes here")
       ), 
-      tabPanelWithTitle("Subject 2", "all about subject 2", color = color,
+      tabPanelWithTitle("Subject 2", "all about subject 2",
              h1("contents"),
              h2("goes here")
       ),
-      tabPanelWithTitle("Subject 3", "all about subject 3", color = color,
+      tabPanelWithTitle("Subject 3", "all about subject 3",
              h1("contents"),
              h2("goes here")
       ),
-      tabPanelWithTitle("Subject 4", "all about subject 4", color = color,
+      tabPanelWithTitle("Subject 4", "all about subject 4",
              h1("contents"),
              h2("goes here")
       )

@@ -1,6 +1,6 @@
 library(shiny)
 
-color <- "green"
+color <- "#96ceb4"
 
 ## Creates an appropriately styled title
 tabTitle <- function(x) { 
@@ -17,14 +17,14 @@ tabDesc <- function(x) {
 ## Also searches for a match in `tabdesc`
 ##  (a named vector of descriptions found in "ui_doctabs.R")
 ## If one is found, adds the description below the title
-tabPanelWithTitle <- function(title, description, ..., color = "red") {
+tabPanelWithTitle <- function(title, description, ...) {
     tabPanel(
       title,
       div(
         class = "tabTitlePanel",
         tabTitle(title),
         tabDesc(description),
-        div(class = paste0("tabTitlePanel-end-", color))
+        div(class = "tabTitlePanel-end")
       ),
       ...
     )
@@ -91,47 +91,64 @@ frontPage <- function(...) {
   )
 }
 
-frontTitle <- function(title, subtitle = NULL, color = "red") {
+frontTitle <- function(title, subtitle = NULL) {
   div(
     class = "front-banner",
-    div(class = paste0("imgcon-", color)),
+    div(class = "imgcon"),
     div(class = "hcon", h1(title)),
     if (!is.null(subtitle)) div(class = "hcon", h2(subtitle)) else NULL
   )
 }
 
-introTitle <- function(text, color = "red") {
+introTitle <- function(text) {
   div(
     tags$h3(class = "intro", text),
-    div(class = paste0("intro-divider-", color))
+    div(class = "intro-divider")
   )
 }
 
 suitHead <- function(..., color = "red") {
-  color <- switch(
-    color,
-    "red" = "#e44c65", 
-    "green" = "#05878a", 
-    "blue" = "#0074cc"
-  )
-  color_tint_0 <- switch(
-    color,
-    "#e44c65" = "#f6c9d0", 
-    "#05878a" = "#b4dbdb", 
-    "#0074cc" = "#b2d5ef"
-  )
-  color_tint_1 <- switch(
-    color,
-    "#e44c65" = "#f4b7c1", 
-    "#05878a" = "#9bcfd0", 
-    "#0074cc" = "#99c7ea"
-  )
-  color_tint_2 <- switch(
-    color,
-    "#e44c65" = "#f1a5b2", 
-    "#05878a" = "#82c3c4", 
-    "#0074cc" = "#7fb9e5"
-  )
+  if (any(color %in% c("red", "green", "blue"))) {
+    color <- switch(
+      color,
+      "red" = "#e44c65", 
+      "green" = "#05878a", 
+      "blue" = "#0074cc"
+    )
+    color_tint_0 <- switch(
+      color,
+      "#e44c65" = "#f6c9d0", 
+      "#05878a" = "#b4dbdb", 
+      "#0074cc" = "#b2d5ef"
+    )
+    color_tint_1 <- switch(
+      color,
+      "#e44c65" = "#f4b7c1", 
+      "#05878a" = "#9bcfd0", 
+      "#0074cc" = "#99c7ea"
+    )
+    color_tint_2 <- switch(
+      color,
+      "#e44c65" = "#f1a5b2", 
+      "#05878a" = "#82c3c4", 
+      "#0074cc" = "#7fb9e5"
+    )
+  } else {
+    if (substr(color, 1, 1) == "#" & nchar(color) == 7) {
+      pct_color_0 <- 0.55
+      pct_color_1 <- 0.45
+      pct_color_2 <- 0.35
+      
+      color_tint_0 <- (pct_color_0 * (col2rgb(color) / 255)) + ((1 - pct_color_0) * c(1,1,1))
+      color_tint_0 <- rgb(color_tint_0[1], color_tint_0[2], color_tint_0[3])
+      
+      color_tint_1 <- (pct_color_1 * (col2rgb(color) / 255)) + ((1 - pct_color_1) * c(1,1,1))
+      color_tint_1 <- rgb(color_tint_1[1], color_tint_1[2], color_tint_1[3])
+      
+      color_tint_2 <- (pct_color_2 * (col2rgb(color) / 255)) + ((1 - pct_color_2) * c(1,1,1))
+      color_tint_2 <- rgb(color_tint_2[1], color_tint_2[2], color_tint_2[3])
+    }
+  }
   lst <- rlang::dots_list(
     tags$head(
       includeCSS("shinysuit-styles.min.css"),
@@ -141,21 +158,30 @@ suitHead <- function(..., color = "red") {
                .navbar-default .navbar-nav>.active>a:focus,
                .navbar-default .navbar-nav>.active>a:hover {
                  background-color: transparent;
-                 box-shadow: inset 0 3px 0 0 %s!important;
+                 box-shadow: inset 0 3px 0 0 %s !important;
                }
                div.box-large {
-                background-color: %s!important;
+                background-color: %s !important;
                }
                div.box-large:hover {
-                background-color: %s!important;
+                background-color: %s !important;
                }
                div.box-small {
-                background-color: %s!important;
+                background-color: %s !important;
                }
                div.box-small:hover {
-                background-color: %s!important;
+                background-color: %s !important;
+               }
+               .intro-divider {
+                background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
+               }
+               div.tabTitlePanel-end {
+                background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
+               }
+               div.front-banner>div.imgcon {
+                background-color: %s !important;
                }",
-              color, color_tint_1, color_tint_2, color_tint_0, color_tint_1
+              color, color_tint_1, color_tint_2, color_tint_0, color_tint_1, color, color_tint_1, color, color_tint_1, color
             ))
         )),
       tags$script(src = "jquery-ui-1-11-4.min.js"),
