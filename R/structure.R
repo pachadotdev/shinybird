@@ -133,29 +133,17 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
 #' @export
 suitHead <- function(..., color = "red") {
   if (any(color %in% c("red", "green", "blue"))) {
-    color <- switch(
-      color,
-      "red" = "#e44c65",
-      "green" = "#05878a",
-      "blue" = "#0074cc"
+    color <- switch(color,
+      "red" = "#e44c65", "green" = "#05878a", "blue" = "#0074cc"
     )
-    color_tint_0 <- switch(
-      color,
-      "#e44c65" = "#f6c9d0",
-      "#05878a" = "#b4dbdb",
-      "#0074cc" = "#b2d5ef"
+    color_tint_0 <- switch(color,
+      "#e44c65" = "#f6c9d0", "#05878a" = "#b4dbdb", "#0074cc" = "#b2d5ef"
     )
-    color_tint_1 <- switch(
-      color,
-      "#e44c65" = "#f4b7c1",
-      "#05878a" = "#9bcfd0",
-      "#0074cc" = "#99c7ea"
+    color_tint_1 <- switch(color,
+      "#e44c65" = "#f4b7c1", "#05878a" = "#9bcfd0", "#0074cc" = "#99c7ea"
     )
-    color_tint_2 <- switch(
-      color,
-      "#e44c65" = "#f1a5b2",
-      "#05878a" = "#82c3c4",
-      "#0074cc" = "#7fb9e5"
+    color_tint_2 <- switch(color,
+      "#e44c65" = "#f1a5b2", "#05878a" = "#82c3c4", "#0074cc" = "#7fb9e5"
     )
   } else {
     if (substr(color, 1, 1) == "#" & nchar(color) == 7) {
@@ -201,6 +189,12 @@ suitHead <- function(..., color = "red") {
                 background-color: %s !important;
                }",
           color, color_tint_1, color_tint_2, color_tint_0, color_tint_1, color, color_tint_1, color, color_tint_1, color
+        )),
+        HTML(sprintf(
+          "div.front-banner>div.imgcon {
+             background-image: url('%s') !important;
+           }",
+          "pattern-triangle.png"
         ))
       ))
     ),
