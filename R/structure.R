@@ -62,23 +62,32 @@ tabPanelWithTitle <- function(title, description, ...) {
 #'
 #' @return a tab panel for Shiny
 #' @importFrom shiny div span tagAppendChild bootstrapPage tags
+#' @importFrom utils getFromNamespace
 #' @export
 suitPage <- function(title, ..., id = "dashboard", head = NULL, header = NULL, footer = NULL, windowTitle = title) {
   pageTitle <- title
   tabs <- list(...)
-  tabset <- shiny:::buildTabset(tabs, "nav navbar-nav", NULL, id)
+
+  # buildTabset is an internal function from shiny
+  buildTabset <- getFromNamespace("buildTabset", "shiny")
+  tabset <- buildTabset(tabs, "nav navbar-nav", NULL, id)
+
   containerDiv <- div(class = "container", div(
     class = "navbar-header",
     span(class = "navbar-brand", pageTitle)
   ), tabset$navList)
+
   contentDiv <- div(class = "container-fluid")
+
   if (!is.null(header)) {
     contentDiv <- tagAppendChild(contentDiv, div(class = "row", header))
   }
   contentDiv <- tagAppendChild(contentDiv, tabset$content)
+
   if (!is.null(footer)) {
     contentDiv <- tagAppendChild(contentDiv, div(class = "row", footer))
   }
+
   bootstrapPage(
     title = windowTitle,
     head,
@@ -125,13 +134,17 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
 #' Suit Layout Head
 #'
 #' @param ... additional arguments
-#' @param color text string with a valid hex color or red/green/blue
+#' @param color text string with red/green/blue or a valid hex color, unvalid colors default to red
 #'
 #' @return a tab panel for Shiny
 #' @importFrom rlang dots_list
 #' @importFrom shiny tags includeCSS HTML
 #' @export
 suitHead <- function(..., color = "red") {
+  if (!any(color %in% c("red", "green", "blue")) | !(substr(color, 1, 1) == "#" & nchar(color) == 7)) {
+    color <-  "red"
+  }
+
   if (any(color %in% c("red", "green", "blue"))) {
     color <- switch(color,
       "red" = "#e44c65", "green" = "#05878a", "blue" = "#0074cc"

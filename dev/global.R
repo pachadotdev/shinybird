@@ -1,3 +1,3 @@
 library(shiny)
 library(shinysuit)
-color <- "red"
+color <- "foobar"

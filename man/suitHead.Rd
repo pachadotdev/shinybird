@@ -9,7 +9,7 @@ suitHead(..., color = "red")
 \arguments{
 \item{...}{additional arguments}
 
-\item{color}{text string with a valid hex color or red/green/blue}
+\item{color}{text string with red/green/blue or a valid hex color, unvalid colors default to red}
 }
 \value{
 a tab panel for Shiny
