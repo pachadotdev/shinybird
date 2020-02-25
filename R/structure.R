@@ -202,21 +202,7 @@ suitHead <- function(..., color = "red") {
                }",
           color, color_tint_1, color_tint_2, color_tint_0, color_tint_1, color, color_tint_1, color, color_tint_1, color
         ))
-      )),
-      tags$script(src = system.file("jquery-ui-1-11-4.min.js", package = "shinysuit")),
-      ## Add jQuery UI tooltips
-      ## Use: have class "jui-tip" and
-      ##      title attribute = tooltip message
-      ## e.g. tags$div(class = "jui-tip", title = "Tooltip Message", radioButtons(...))
-      tags$script('$(function(){$(".jui-tip").tooltip();});'),
-      ## Use jQuery UI accordion for nice looking show/hide inputs feature
-      tags$script('$(function(){$("div.divinput").accordion({
-            collapsible: true,
-            heightStyle: "content"
-         });});'),
-      ## iframe resizer code to dynamically adjust iframe height
-      ## also requires work by suit web services to work
-      tags$script(src = system.file("iframeResizer.contentWindow.min.js", package = "shinysuit"))
+      ))
     ),
     ...
   )
