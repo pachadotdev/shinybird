@@ -135,12 +135,13 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
 #'
 #' @param ... additional arguments
 #' @param color text string with red/green/blue or a valid hex color, unvalid colors default to red
+#' @param background an image in www/ or an URL
 #'
 #' @return a tab panel for Shiny
 #' @importFrom rlang dots_list
 #' @importFrom shiny tags includeCSS HTML
 #' @export
-suitHead <- function(..., color = "red") {
+suitHead <- function(..., color = "red", background = NULL) {
   if (!any(color %in% c("red", "green", "blue")) | !(substr(color, 1, 1) == "#" & nchar(color) == 7)) {
     color <-  "red"
   }
@@ -203,12 +204,14 @@ suitHead <- function(..., color = "red") {
                }",
           color, color_tint_1, color_tint_2, color_tint_0, color_tint_1, color, color_tint_1, color, color_tint_1, color
         )),
-        HTML(sprintf(
-          "div.front-banner>div.imgcon {
+        if (!is.null(background)) {
+          HTML(sprintf(
+            "div.front-banner>div.imgcon {
              background-image: url('%s') !important;
            }",
-          "pattern-triangle.png"
-        ))
+            background
+          ))
+        }
       ))
     ),
     ...
