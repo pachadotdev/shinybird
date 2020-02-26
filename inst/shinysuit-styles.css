@@ -88,6 +88,7 @@ h6 {
   right: 0 !important;
   height: auto;
   z-index: 1200;
+  vertical-align: middle;
 }
 
 .row {
@@ -273,8 +274,7 @@ div.box-timeout {
 
 /* Navbar styles */
 .navbar {
-  min-height: 0 !important;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
   border: 0 !important;
   border-radius: 0;
 }
@@ -316,7 +316,7 @@ div.box-timeout {
 } */
 /* Top-level nav buttons */
 .navbar-default .navbar-nav>li:hover {
-  box-shadow: inset 0 3px 0 0 #bdbdbd
+  box-shadow: inset 0 -4px #bdbdbd;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
@@ -326,7 +326,7 @@ div.box-timeout {
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color: transparent;
-  box-shadow: inset 0 3px 0 0 #e44c65
+  box-shadow: inset 0 -4px #e44c65;
 }
 
 /* Drop-down navigation box */

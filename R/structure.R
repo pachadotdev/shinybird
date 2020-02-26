@@ -109,7 +109,7 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
   div(
     class = "container-fluid",
     div(
-      id = "suit-header",
+      id = "navbar",
       div(
         class = "suit-brand",
         if (!is.null(logo)) {
@@ -125,8 +125,7 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
         } else {
           NULL
         }
-      ),
-      tags$script('if(window != window.parent){$("#suit-header").css("display", "none");}')
+      )
     )
   )
 }
@@ -179,7 +178,7 @@ suitHead <- function(..., color = "red", background = NULL) {
                .navbar-default .navbar-nav>.active>a:focus,
                .navbar-default .navbar-nav>.active>a:hover {
                  background-color: transparent;
-                 box-shadow: inset 0 3px 0 0 %s !important;
+                 box-shadow: inset 0 -4px %s !important;
                }
                div.box-large {
                 background-color: %s !important;
