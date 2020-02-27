@@ -44,7 +44,7 @@ shinyUI(
         ),
 
         div(
-          class = "box box-timeout",
+          class = "box box-transparent",
           tags$p(
             boldText("PLEASE NOTE:"),
             "This app may time-out if left idle too long, which will cause the screen to grey-out.",

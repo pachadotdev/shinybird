@@ -268,13 +268,13 @@ img.rear-preview {
   margin-left: 0.5em;
 }
 
-div.box-timeout {
+div.box-transparent {
   border: 1px solid #F2F2F2;
 }
 
 /* Navbar styles */
 .navbar {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   border: 0 !important;
   border-radius: 0;
 }

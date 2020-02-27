@@ -231,7 +231,7 @@ suitHead <- function(..., decoration_color = "red", background_color = "white", 
             background_image
           ))
         },
-        if (background_color_norm < 0.2) {
+        if (background_color_norm < 0.4) {
           HTML(
             ".dropdown-menu>li>a, .navbar-default .navbar-nav>li>a {
               color: #b3b3b3 !important;
