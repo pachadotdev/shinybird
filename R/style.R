@@ -29,6 +29,6 @@ italicText <- function(text) {
 #' @importFrom grDevices col2rgb rgb
 #' @keywords internal
 generateColors <- function(color, pct) {
-  color <- (pct * (col2rgb(color) / 255)) + ((1 - pct) * c(1,1,1))
+  color <- (pct * (col2rgb(color) / 255)) + ((1 - pct) * c(1, 1, 1))
   return(rgb(color[1], color[2], color[3]))
 }

@@ -316,7 +316,7 @@ div.box-timeout {
 } */
 /* Top-level nav buttons */
 .navbar-default .navbar-nav>li:hover {
-  box-shadow: inset 0 -4px #bdbdbd;
+  box-shadow: inset 0 -4px #b3b3b3;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {

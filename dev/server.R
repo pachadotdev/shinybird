@@ -1,5 +1,7 @@
 shinyServer(function(input, output, session) {
-  d <- reactive({ filter(datasaurus,  dataset == input$filter_dataset) })
+  d <- reactive({
+    filter(datasaurus, dataset == input$filter_dataset)
+  })
 
   s <- reactive({
     d() %>%
@@ -8,14 +10,18 @@ shinyServer(function(input, output, session) {
         median_x = median(x), median_y = median(y),
         sd_x = sd(x), sd_y = sd(y)
       )
-      # gather(statistic, value)
+    # gather(statistic, value)
   })
 
   p <- reactive({
     hchart(d(), "scatter", hcaes(x = x, y = y))
   })
 
-  output$s <- renderTable({ s() })
+  output$s <- renderTable({
+    s()
+  })
 
-  output$p <- renderHighchart({ p() })
+  output$p <- renderHighchart({
+    p()
+  })
 })

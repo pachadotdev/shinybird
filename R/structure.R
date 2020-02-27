@@ -133,42 +133,56 @@ suitHeader <- function(logo = NULL, href = NULL, caption = NULL) {
 #' Suit Layout Head
 #'
 #' @param ... additional arguments
-#' @param color text string with red/green/blue or a valid hex color, unvalid colors default to red
-#' @param background an image in www/ or an URL
+#' @param decoration_color text string with red/green/blue or a valid hex color, unvalid colors default to red
+#' @param background_color explain
+#' @param background_image an image in www/ or an URL
 #'
 #' @return a tab panel for Shiny
 #' @importFrom rlang dots_list
 #' @importFrom shiny tags includeCSS HTML
 #' @export
-suitHead <- function(..., color = "red", background = NULL) {
-  if (!any(color %in% c("red", "green", "blue")) | !(substr(color, 1, 1) == "#" & nchar(color) == 7)) {
-    color <-  "red"
+suitHead <- function(..., decoration_color = "red", background_color = "white", background_image = NULL) {
+  if (!any(decoration_color %in% c("red", "green", "blue")) &
+      !(substr(decoration_color, 1, 1) == "#" & nchar(decoration_color) == 7)) {
+    decoration_color <- "red"
   }
 
-  if (any(color %in% c("red", "green", "blue"))) {
-    color <- switch(color,
+  if (any(decoration_color %in% c("red", "green", "blue"))) {
+    decoration_color <- switch(decoration_color,
       "red" = "#e44c65", "green" = "#05878a", "blue" = "#0074cc"
     )
-    color_tint_0 <- switch(color,
+    decoration_color_tint_0 <- switch(decoration_color,
       "#e44c65" = "#f6c9d0", "#05878a" = "#b4dbdb", "#0074cc" = "#b2d5ef"
     )
-    color_tint_1 <- switch(color,
+    decoration_color_tint_1 <- switch(decoration_color,
       "#e44c65" = "#f4b7c1", "#05878a" = "#9bcfd0", "#0074cc" = "#99c7ea"
     )
-    color_tint_2 <- switch(color,
+    decoration_color_tint_2 <- switch(decoration_color,
       "#e44c65" = "#f1a5b2", "#05878a" = "#82c3c4", "#0074cc" = "#7fb9e5"
     )
   } else {
-    if (substr(color, 1, 1) == "#" & nchar(color) == 7) {
-      pct_color_0 <- 0.55
-      pct_color_1 <- 0.45
-      pct_color_2 <- 0.35
+    if (substr(decoration_color, 1, 1) == "#" & nchar(decoration_color) == 7) {
+      pct_decoration_color_0 <- 0.55
+      pct_decoration_color_1 <- 0.45
+      pct_decoration_color_2 <- 0.35
 
-      color_tint_0 <- generateColors(color, pct_color_0)
-      color_tint_1 <- generateColors(color, pct_color_1)
-      color_tint_2 <- generateColors(color, pct_color_2)
+      decoration_color_tint_0 <- generateColors(decoration_color, pct_decoration_color_0)
+      decoration_color_tint_1 <- generateColors(decoration_color, pct_decoration_color_1)
+      decoration_color_tint_2 <- generateColors(decoration_color, pct_decoration_color_2)
     }
   }
+
+  if (background_color != "white" &
+      !(substr(background_color, 1, 1) == "#" & nchar(background_color) == 7)) {
+    background_color <- "#ffffff"
+  }
+
+  background_color_vec <- col2rgb(background_color) / 255
+  background_color_norm <- sqrt(sum(background_color_vec^2))
+
+  decoration_color_tint_2_vec <- col2rgb(decoration_color_tint_2) / 255
+  decoration_color_tint_2_norm <- sqrt(sum(decoration_color_tint_2_vec^2))
+
   lst <- dots_list(
     tags$head(
       includeCSS(system.file("shinysuit-styles.min.css", package = "shinysuit")),
@@ -200,16 +214,45 @@ suitHead <- function(..., color = "red", background = NULL) {
                }
                div.front-banner>div.imgcon {
                 background-color: %s !important;
+               }
+               body {
+                background-color: %s !important;
                }",
-          color, color_tint_1, color_tint_2, color_tint_0, color_tint_1, color, color_tint_1, color, color_tint_1, color
+          decoration_color, decoration_color_tint_1, decoration_color_tint_2,
+          decoration_color_tint_0, decoration_color_tint_1, decoration_color,
+          decoration_color_tint_1, decoration_color, decoration_color_tint_1,
+          decoration_color, background_color
         )),
-        if (!is.null(background)) {
+        if (!is.null(background_image)) {
           HTML(sprintf(
             "div.front-banner>div.imgcon {
-             background-image: url('%s') !important;
-           }",
-            background
+              background-image: url('%s') !important;
+            }",
+            background_image
           ))
+        },
+        if (background_color_norm < 0.2) {
+          HTML(
+            ".dropdown-menu>li>a, .navbar-default .navbar-nav>li>a {
+              color: #b3b3b3 !important;
+            }
+            .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+              color: #bababa !important:
+            }
+            h3.intro {
+              color: #bababa !important;
+            }
+            p {
+              color: #b3b3b3 !important;
+            }"
+          )
+        },
+        if (decoration_color_tint_2_norm > 0.8) {
+          HTML(
+            "p.intro, .box-small p, .box-large p {
+              color: #000000 !important;
+            }"
+          )
         }
       ))
     ),

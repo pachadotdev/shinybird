@@ -4,14 +4,21 @@
 \alias{suitHead}
 \title{Suit Layout Head}
 \usage{
-suitHead(..., color = "red", background = NULL)
+suitHead(
+  ...,
+  decoration_color = "red",
+  background_color = "white",
+  background_image = NULL
+)
 }
 \arguments{
 \item{...}{additional arguments}
 
-\item{color}{text string with red/green/blue or a valid hex color, unvalid colors default to red}
+\item{decoration_color}{text string with red/green/blue or a valid hex color, unvalid colors default to red}
 
-\item{background}{an image in www/ or an URL}
+\item{background_color}{explain}
+
+\item{background_image}{an image in www/ or an URL}
 }
 \value{
 a tab panel for Shiny
