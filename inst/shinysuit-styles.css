@@ -210,66 +210,10 @@ div.front-banner>div.hcon>h2 {
   padding-top: 0px
 }
 
-div.box-con {
-  height: 130px;
-  margin-top: 10px;
-  margin-bottom: 10px
-}
-
-div.box {
-  height: 100%;
-  padding: 9px;
-  padding-top: 15px;
-}
-
-div.box p {
-  margin: 0px;
-}
-
-div.box-small {
-  float: left;
-  width: 33%;
-  color: #3F3F3F;
-  background-color: #D6E8F7;
-  border-top: 2px solid transparent;
-}
-
-div.box-small:hover {
-  background-color: #abb9c5;
-}
-
-div.box-large {
-  float: right;
-  width: 64%;
-  color: #3F3F3F;
-  border-top: 2px solid transparent;
-  background-color: #f4b7c1;
-}
-
-div.box-large:hover {
-  background-color: #f1a5b2;
-}
-
-div.box-large.left-side {
-  float: left;
-  width: 40%;
-  background-color: transparent!important;
-}
-
-div.box-large.right-side {
-  float: right;
-  width: 60%;
-  background-color: transparent!important;
-}
-
 img.rear-preview {
   float: right;
   height: 100px;
   margin-left: 0.5em;
-}
-
-div.box-transparent {
-  border: 1px solid #F2F2F2;
 }
 
 /* Navbar styles */

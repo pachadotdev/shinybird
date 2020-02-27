@@ -20,37 +20,7 @@ shinyUI(
         introTitle("Foo Bar"),
 
         tags$p("This is a paragraph."),
-        tags$p("This is another paragraph."),
-
-        div(
-          class = "box-con",
-          tags$a(
-            target = "_blank",
-            href = "http://duckduckgo.com",
-            suitBoxSmall(
-              title = "Find out more",
-              text = "much more content"
-            )
-          ),
-          tags$a(
-            target = "_blank",
-            href = "http://duckduckgo.com",
-            suitBoxLarge(
-              title = "Find out more",
-              text = "much more content",
-              image = "logo.svg"
-            )
-          )
-        ),
-
-        div(
-          class = "box box-transparent",
-          tags$p(
-            boldText("PLEASE NOTE:"),
-            "This app may time-out if left idle too long, which will cause the screen to grey-out.",
-            "To use the app again, refresh the page. This will reset all previously-selected input options."
-          )
-        )
+        tags$p("This is another paragraph.")
       )
     ),
 
