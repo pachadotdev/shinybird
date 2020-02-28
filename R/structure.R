@@ -185,76 +185,76 @@ suitHead <- function(..., decoration_color = "red", background_color = "white", 
 
   lst <- dots_list(
     tags$head(
-      includeCSS(system.file("shinysuit-styles.min.css", package = "shinysuit")),
-      tags$head(tags$style(
-        HTML(sprintf(
-          ".navbar-default .navbar-nav>.active>a,
-               .navbar-default .navbar-nav>.active>a:focus,
-               .navbar-default .navbar-nav>.active>a:hover {
-                 background-color: transparent;
-                 box-shadow: inset 0 -4px %s !important;
-               }
-               div.box-large {
-                background-color: %s !important;
-               }
-               div.box-large:hover {
-                background-color: %s !important;
-               }
-               div.box-small {
-                background-color: %s !important;
-               }
-               div.box-small:hover {
-                background-color: %s !important;
-               }
-               .intro-divider {
-                background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
-               }
-               div.tabTitlePanel-end {
-                background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
-               }
-               div.front-banner>div.imgcon {
-                background-color: %s !important;
-               }
-               body {
-                background-color: %s !important;
-               }",
-          decoration_color, decoration_color_tint_1, decoration_color_tint_2,
-          decoration_color_tint_0, decoration_color_tint_1, decoration_color,
-          decoration_color_tint_1, decoration_color, decoration_color_tint_1,
-          decoration_color, background_color
-        )),
-        if (!is.null(background_image)) {
-          HTML(sprintf(
-            "div.front-banner>div.imgcon {
-              background-image: url('%s') !important;
-            }",
-            background_image
-          ))
-        },
-        if (background_color_norm < 0.4) {
-          HTML(
-            ".dropdown-menu>li>a, .navbar-default .navbar-nav>li>a {
-              color: #b3b3b3 !important;
-            }
-            .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-              color: #bababa !important:
-            }
-            h3.intro {
-              color: #bababa !important;
-            }
-            p {
-              color: #b3b3b3 !important;
-            }"
-          )
-        },
-        if (decoration_color_tint_2_norm > 0.8) {
-          HTML(
-            "p.intro, .box-small p, .box-large p {
-              color: #000000 !important;
-            }"
-          )
-        }
-      ))
+      includeCSS(system.file("shinysuit-styles.min.css", package = "shinysuit"))
+      # tags$head(tags$style(
+      #   HTML(sprintf(
+      #     ".navbar-default .navbar-nav>.active>a,
+      #          .navbar-default .navbar-nav>.active>a:focus,
+      #          .navbar-default .navbar-nav>.active>a:hover {
+      #            background-color: transparent;
+      #            box-shadow: inset 0 -4px %s !important;
+      #          }
+      #          div.box-large {
+      #           background-color: %s !important;
+      #          }
+      #          div.box-large:hover {
+      #           background-color: %s !important;
+      #          }
+      #          div.box-small {
+      #           background-color: %s !important;
+      #          }
+      #          div.box-small:hover {
+      #           background-color: %s !important;
+      #          }
+      #          .intro-divider {
+      #           background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
+      #          }
+      #          div.tabTitlePanel-end {
+      #           background: transparent linear-gradient(to right, %s 0%%, %s 100%%) repeat scroll 0%% 0%% !important;
+      #          }
+      #          div.front-banner>div.imgcon {
+      #           background-color: %s !important;
+      #          }
+      #          body {
+      #           background-color: %s !important;
+      #          }",
+      #     decoration_color, decoration_color_tint_1, decoration_color_tint_2,
+      #     decoration_color_tint_0, decoration_color_tint_1, decoration_color,
+      #     decoration_color_tint_1, decoration_color, decoration_color_tint_1,
+      #     decoration_color, background_color
+      #   )),
+      #   if (!is.null(background_image)) {
+      #     HTML(sprintf(
+      #       "div.front-banner>div.imgcon {
+      #         background-image: url('%s') !important;
+      #       }",
+      #       background_image
+      #     ))
+      #   },
+      #   if (background_color_norm < 0.4) {
+      #     HTML(
+      #       ".dropdown-menu>li>a, .navbar-default .navbar-nav>li>a {
+      #         color: #b3b3b3 !important;
+      #       }
+      #       .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+      #         color: #bababa !important:
+      #       }
+      #       h3.intro {
+      #         color: #bababa !important;
+      #       }
+      #       p {
+      #         color: #b3b3b3 !important;
+      #       }"
+      #     )
+      #   },
+      #   if (decoration_color_tint_2_norm > 0.8) {
+      #     HTML(
+      #       "p.intro, .box-small p, .box-large p {
+      #         color: #000000 !important;
+      #       }"
+      #     )
+      #   }
+      # ))
     ),
     ...
   )

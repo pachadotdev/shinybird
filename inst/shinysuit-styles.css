@@ -218,74 +218,39 @@ img.rear-preview {
 
 /* Navbar styles */
 .navbar {
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-  border: 0 !important;
-  border-radius: 0;
+    min-height: 45px;
 }
 
-.navbar-default>.container {
-  width: auto !important;
-  float: left !important;
-  top: 0;
-  margin-right: 0;
-  margin-left: auto;
-  z-index: 900;
-}
-
-/* Hide title and arrows */
-.navbar-header, .navbar-default .caret {
-  display: none;
-}
-
-/* Set fonts */
-.navbar-default .navbar-nav>li>a, .dropdown-menu>li>a {
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  color: #666666;
-}
-
-.navbar-default .navbar-nav>li.active>a, .dropdown-menu>li.active>a {
-  font-weight: 400;
-}
-
-/* Navbar background */
 .navbar-default {
-  background-color: transparent;
-  border-color: transparent;
-}
+    background-color: $nav-bg;
+    border-bottom: 1px solid $primary;
+    margin-bottom: 0px;
 
-/* .navbar-default:hover {
-   border-color: #e7e7e7;
-} */
-/* Top-level nav buttons */
-.navbar-default .navbar-nav>li:hover {
-  box-shadow: inset 0 -4px #b3b3b3;
-}
+    .navbar-nav > li > a {
+    	border-bottom: none;
+        color: $nav-a;
+    	  font-weight: 500;
+        height: 44px;
+        padding: 11px 16px;
+    }
 
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-  background-color: transparent;
-  text-decoration: none;
-}
+    .navbar-nav > li > a:hover {
+        color: white;
+        background-color: #fafafa;
+    }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  background-color: transparent;
-  box-shadow: inset 0 -4px #e44c65;
-}
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:hover,
+    .navbar-nav > .active > a:focus {
+        background: none;
+        border-bottom: solid 2px red;
+        color: white;
+    }
 
-/* Drop-down navigation box */
-.dropdown-menu {
-  background-color: #fafafa;
-}
-
-/* Drop-down navigation buttons */
-.dropdown-menu>li>a:hover {
-  color: inherit;
-  background-color: inherit;
-  text-decoration: none;
-}
-
-.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
-  color: inherit;
-  background-color: inherit;
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        color: #50595e;
+        height: 44px;
+    }
 }
