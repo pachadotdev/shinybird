@@ -2,16 +2,19 @@
 % Please edit documentation in R/structure.R
 \name{frontPage}
 \alias{frontPage}
-\title{Suit Layout Front Page}
+\title{Bird Layout Front Page}
 \usage{
-frontPage(...)
+frontPage(title = "My Shiny App", subtitle = NULL, background = NULL, ...)
 }
 \arguments{
+\item{title}{The title to display in the front page}
+
+\item{subtitle}{The subtitle to display in the front page}
+
+\item{background}{The background to display in the front page}
+
 \item{...}{additional arguments}
 }
-\value{
-a tab panel for Shiny
-}
 \description{
-Suit Layout Front Page
+Bird Layout Front Page
 }

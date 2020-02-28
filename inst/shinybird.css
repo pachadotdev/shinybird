@@ -169,8 +169,7 @@ div.front-page {
 }
 
 div.front-page>div.img-front-page {
-  /*background-color: #e44c65;*/
-  background-color: blue;
+  background-color: #e44c65;
   position: absolute;
   left: 0;
   z-index: -1;

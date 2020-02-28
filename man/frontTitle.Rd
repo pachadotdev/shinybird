@@ -2,18 +2,11 @@
 % Please edit documentation in R/structure.R
 \name{frontTitle}
 \alias{frontTitle}
-\title{Suit Layout Front Title}
+\title{Bird Layout Front Title}
 \usage{
-frontTitle(title, subtitle = NULL)
-}
-\arguments{
-\item{title}{text string for the tab title}
-
-\item{subtitle}{text string for the tab subtitle}
-}
-\value{
-a tab panel for Shiny
+frontTitle(title, subtitle)
 }
 \description{
-Suit Layout Front Title
+Bird Layout Front Title
 }
+\keyword{internal}
