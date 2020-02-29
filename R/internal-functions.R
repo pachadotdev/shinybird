@@ -15,14 +15,24 @@ frontTitle <- function(title, subtitle) {
 #' Bird Layout Background Image
 #' @importFrom shiny tags HTML
 #' @keywords internal
-frontBackground <- function(background) {
+frontBackground <- function(background, background_scale) {
   if (!is.null(background)) {
     tags$head(
       tags$style(
-        HTML(sprintf(
-          "div.front-page>div.img-front-page { background-image: url('%s') !important; }",
-          background
-        ))
+        HTML(
+          if (background_scale == TRUE) {
+            sprintf(
+              "div.front-page>div.img-front-page {background-image: url('%s') !important;
+              background-repeat: no-repeat; background-size: cover;}",
+              background
+            )
+          } else {
+            sprintf(
+              "div.front-page>div.img-front-page {background-image: url('%s') !important;}",
+              background
+            )
+          }
+        )
       ))
   } else {
     NULL

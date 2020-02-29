@@ -5,6 +5,7 @@
 #' @param title The title to display in the front page
 #' @param subtitle The subtitle to display in the front page
 #' @param background The background to display in the front page
+#' @param background_scale Use CSS properties to scale the background image
 #' @param ... additional arguments
 #'
 #' @examples
@@ -13,11 +14,11 @@
 #' @importFrom shiny div
 #'
 #' @export
-frontPage <- function(title = "My Shiny App", subtitle = NULL, background = NULL, ...) {
+frontPage <- function(title = "My Shiny App", subtitle = NULL, background = NULL, background_scale = TRUE, ...) {
   div(
     class = "front-page",
     frontTitle(title, subtitle),
-    frontBackground(background),
+    frontBackground(background, background_scale),
     ...
   )
 }

@@ -4,7 +4,8 @@ shinyUI(
              frontPage(
                title = "My Organization's Dashboard",
                subtitle = "Much content, very nice",
-               background = "pattern-triangle.png"
+               background = "pattern-triangle.png",
+               background_scale = F
              )
             ),
     tabPanelWithTitle(

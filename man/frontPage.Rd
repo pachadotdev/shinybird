@@ -4,7 +4,13 @@
 \alias{frontPage}
 \title{Create a styled front page}
 \usage{
-frontPage(title = "My Shiny App", subtitle = NULL, background = NULL, ...)
+frontPage(
+  title = "My Shiny App",
+  subtitle = NULL,
+  background = NULL,
+  background_scale = TRUE,
+  ...
+)
 }
 \arguments{
 \item{title}{The title to display in the front page}
@@ -12,6 +18,8 @@ frontPage(title = "My Shiny App", subtitle = NULL, background = NULL, ...)
 \item{subtitle}{The subtitle to display in the front page}
 
 \item{background}{The background to display in the front page}
+
+\item{background_scale}{Use CSS properties to scale the background image}
 
 \item{...}{additional arguments}
 }

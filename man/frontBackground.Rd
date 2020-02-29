@@ -4,7 +4,7 @@
 \alias{frontBackground}
 \title{Bird Layout Background Image}
 \usage{
-frontBackground(background)
+frontBackground(background, background_scale)
 }
 \description{
 Bird Layout Background Image
