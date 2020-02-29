@@ -2,7 +2,7 @@
 % Please edit documentation in R/front-page.R
 \name{frontPage}
 \alias{frontPage}
-\title{Bird Layout Front Page}
+\title{Create a styled front page}
 \usage{
 frontPage(title = "My Shiny App", subtitle = NULL, background = NULL, ...)
 }
@@ -16,5 +16,9 @@ frontPage(title = "My Shiny App", subtitle = NULL, background = NULL, ...)
 \item{...}{additional arguments}
 }
 \description{
-Bird Layout Front Page
+Create a front page with title, subtitle and background image.
+}
+\examples{
+frontPage("Much content", "Very nice")
+
 }

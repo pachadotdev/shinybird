@@ -1,15 +1,17 @@
-#' Tab Panel With Title
+#' Create a Styled Panel With Titles
+#'
+#' Create a panel that works well with dropdowns and adds title and subtitle.
 #'
 #' @param title text string for the tab title
 #' @param description text string for the tab description
 #' @param ... additional arguments
 #'
-#' @return a tab panel for Shiny
-#' @importFrom shiny tabPanel div
-#' @export
-#'
 #' @examples
-#' tabPanelWithTitle("foo bar", "the details about foo bar")
+#' tabPanelWithTitle("Wow", "Such data")
+#'
+#' @importFrom shiny tabPanel div
+#'
+#' @export
 tabPanelWithTitle <- function(title, description = NULL, ...) {
   tabPanel(
     title,
@@ -20,18 +22,4 @@ tabPanelWithTitle <- function(title, description = NULL, ...) {
     ),
     ...
   )
-}
-
-#' Styled Title for Tab
-#' @importFrom shiny h1
-#' @keywords internal
-tabTitle <- function(title) {
-  h1(class = "tabTitle", title)
-}
-
-#' Styled Description for Tab
-#' @importFrom shiny tags
-#' @keywords internal
-tabDesc <- function(description) {
-  if (!is.null(description)) tags$h2(class = "tabDesc", description) else NULL
 }

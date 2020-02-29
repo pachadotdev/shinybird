@@ -1,7 +1,7 @@
 #' Create a page with a top level navigation bar
 #'
 #' Create a page that contains a top level navigation bar that can be used to
-#' toggle a set of [tabPanel()] elements.
+#' toggle a set of [tabPanel()] or [tabPanelWithTitle()] elements.
 #'
 #' @param title The title to display in the app
 #' @param ... [tabPanel()] elements to include in the page. The
@@ -41,26 +41,8 @@
 #'   a valid hex color such as #e0245e.
 #' @param theme Optional CSS file within the www directory.
 #'
-#' @return A UI defintion that can be passed to the [shinyUI] function.
-#'
-#' @details The `navbarMenu` function can be used to create an embedded
-#'   menu within the navbar that in turns includes additional tabPanels (see
-#'   example below).
-#'
-#' @seealso [tabPanel()], [tabsetPanel()],
-#'   [updateNavbarPage()], [insertTab()],
-#'   [showTab()]
-#'
-#' @family layout functions
-#'
 #' @examples
-#' library(shiny); library(shinybird)
-#' birdPage(id="mainnav", "So Shiny",
-#'  tabPanel("Wow",
-#'   frontPage(
-#'    title = "My Organization's Dashboard",
-#'    subtitle = "Much content, very nice"
-#' )))
+#' birdPage(id = "Doge", "Very Shiny")
 #'
 #' @importFrom utils getFromNamespace
 #' @importFrom shiny bootstrapPage restoreInput tagAppendChild tabPanel span icon includeCSS

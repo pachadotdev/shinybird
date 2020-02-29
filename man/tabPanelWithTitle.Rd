@@ -2,7 +2,7 @@
 % Please edit documentation in R/tab-panel-with-title.R
 \name{tabPanelWithTitle}
 \alias{tabPanelWithTitle}
-\title{Tab Panel With Title}
+\title{Create a Styled Panel With Titles}
 \usage{
 tabPanelWithTitle(title, description = NULL, ...)
 }
@@ -13,12 +13,10 @@ tabPanelWithTitle(title, description = NULL, ...)
 
 \item{...}{additional arguments}
 }
-\value{
-a tab panel for Shiny
-}
 \description{
-Tab Panel With Title
+Create a panel that works well with dropdowns and adds title and subtitle.
 }
 \examples{
-tabPanelWithTitle("foo bar", "the details about foo bar")
+tabPanelWithTitle("Wow", "Such data")
+
 }

@@ -1,5 +1,5 @@
 shinyUI(
-  birdPage(id="mainnav", "sdcMicro GUI", theme = "shinybird.min.css", color = "blue",
+  birdPage(id="mainnav", "Doge Demo", color = "red",
     tabPanel("Tab 1",
              frontPage(
                title = "My Organization's Dashboard",
@@ -7,7 +7,10 @@ shinyUI(
                background = "pattern-triangle.png"
              )
             ),
-    tabPanel("Tab 2"),
+    tabPanelWithTitle(
+      "Tab2",
+      "insert content"
+    ),
     navbarMenu(
       "Tab 2",
       tabPanelWithTitle(
@@ -16,15 +19,15 @@ shinyUI(
       ),
       tabPanelWithTitle(
         "contents",
-        "goes here"
+        "goes and here"
       ),
       tabPanelWithTitle(
         "contents",
-        "goes here"
+        "also here"
       ),
       tabPanelWithTitle(
         "contents",
-        "goes here"
+        "and here"
       )
     )
   )
