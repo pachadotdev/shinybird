@@ -1,5 +1,5 @@
 shinyUI(
-  birdPage(id="mainnav", "sdcMicro GUI", theme = "shinybird.min.css",
+  birdPage(id="mainnav", "sdcMicro GUI", theme = "shinybird.min.css", color = "blue",
     tabPanel("Tab 1",
              frontPage(
                title = "My Organization's Dashboard",
@@ -10,21 +10,21 @@ shinyUI(
     tabPanel("Tab 2"),
     navbarMenu(
       "Tab 2",
-      tabPanel(
-        h1("contents"),
-        h2("goes here")
+      tabPanelWithTitle(
+        "contents",
+        "goes here"
       ),
-      tabPanel(
-        h1("contents"),
-        h2("goes here")
+      tabPanelWithTitle(
+        "contents",
+        "goes here"
       ),
-      tabPanel(
-        h1("contents"),
-        h2("goes here")
+      tabPanelWithTitle(
+        "contents",
+        "goes here"
       ),
-      tabPanel(
-        h1("contents"),
-        h2("goes here")
+      tabPanelWithTitle(
+        "contents",
+        "goes here"
       )
     )
   )

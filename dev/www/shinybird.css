@@ -50,20 +50,20 @@ a:hover {
   font-weight: 500;
   font-size: 18px;
   height: 60px;
-  padding: 18px 16px;
+  padding: 18px 16px!;
   transition: all 0.25s;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  color: white;
-  background-color: #2baaf6;
+  color: #555;
+  background-color: #dcdfe1;
 }
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
   background: none;
-  border-bottom: solid 5px #e44c65;
+  border-bottom: solid 5px #e0245e;
   color: #555;
 }
 
@@ -71,7 +71,6 @@ a:hover {
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #50595e;
-  height: 60px;
 }
 
 .container-fluid>.navbar-header {
@@ -169,8 +168,7 @@ div.front-page {
 }
 
 div.front-page>div.img-front-page {
-  /*background-color: #e44c65;*/
-  background-color: blue;
+  background-color: #e0245e;
   position: absolute;
   left: 0;
   z-index: -1;
@@ -184,6 +182,7 @@ div.front-page>div.title-front-page {
   width: 410px;
   padding: 10px 20px 10px 20px;
   margin-top: 20px;
+  border-radius: 4px !important;
 }
 
 div.front-page>div.title-front-page>h1 {
@@ -210,7 +209,7 @@ div.front-page>div.title-front-page>h2 {
   margin: 2px 0 0;
   background: #fff;
   background-clip: border-box;
-  border-radius: 4px;
+  border-radius: 4px!important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   background-clip: padding-box;
 }
@@ -218,17 +217,22 @@ div.front-page>div.title-front-page>h2 {
 .dropdown-menu>li>a {
   font-size: 18px;
   font-weight: 500;
+  color: #555;
   text-decoration: none !important;
   border-left: 5px solid transparent;
 }
 
 .dropdown-menu>li>a:hover {
-  background-color: transparent;
-  border-left: solid 5px #e44c65;
+  background-color: #dcdfe1;
+  border-left: solid 5px transparent;
 }
 
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
-  background-color: transparent;
-  border-left: solid 5px #e44c65;
-  color: black;
+  color: #555;
+  background-color: #dcdfe1;
+  border-left: solid 5px #e0245e;
+}
+
+.navbar-brand {
+  padding: 18px 18px;
 }

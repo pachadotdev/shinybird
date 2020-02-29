@@ -37,6 +37,8 @@
 #'   Bootstrap 3.
 #' @param windowTitle The title that should be displayed by the browser window.
 #'   Useful if `title` is not a string.
+#' @param color Optional color for the app. It can be red (default), blue ... or
+#'   a valid hex color such as #e0245e.
 #' @param theme Optional CSS file within the www directory.
 #'
 #' @return A UI defintion that can be passed to the [shinyUI] function.
@@ -76,7 +78,26 @@ birdPage <- function(title,
                        fluid = TRUE,
                        responsive = NULL,
                        windowTitle = title,
+                       color = "red",
                        theme = NULL) {
+
+  default_colors <- c("red", "green", "blue", "yellow", "purple")
+
+  if (!(color %in% default_colors) &
+      !(substr(color, 1, 1) == "#" & nchar(color) <= 7)) {
+    warning("The chosen color is not a valid color and red will be used.")
+    color <- "red"
+  }
+
+  if (color %in% default_colors) {
+    color <- switch(color,
+                    "red" = "#e0245e",
+                    "green" = "#17bf63",
+                    "blue" = "#1da1f2",
+                    "yellow" = "#ffad1f",
+                    "purple" = "#794bc4"
+    )
+  }
 
   # import shiny internals
   buildTabset <- getFromNamespace("buildTabset", "shiny")
@@ -153,53 +174,28 @@ birdPage <- function(title,
         includeCSS(paste0("www/", theme))
       }
     ),
-    contentDiv
-  )
-}
-
-#' Bird Layout Front Page
-#' @param title The title to display in the front page
-#' @param subtitle The subtitle to display in the front page
-#' @param background The background to display in the front page
-#' @param ... additional arguments
-#' @importFrom shiny div
-#' @export
-frontPage <- function(title = "My Shiny App", subtitle = NULL, background = NULL, ...) {
-  div(
-    class = "front-page",
-    frontTitle(title, subtitle),
-    frontBackground(background),
-    ...
-  )
-}
-
-#' Bird Layout Front Title
-#' @importFrom shiny div h1 h2
-#' @keywords internal
-frontTitle <- function(title, subtitle) {
-  div(
-    class = "front-page",
-    div(class = "img-front-page"),
-    div(class = "title-front-page",
-        h1(title),
-        if (!is.null(subtitle)) h2(subtitle) else NULL
-    )
-  )
-}
-
-#' Bird Layout Background Image
-#' @importFrom shiny tags HTML
-#' @keywords internal
-frontBackground <- function(background) {
-  if (!is.null(background)) {
-    tags$head(
-      tags$style(
+    if (color != "#e0245e") {
+      tags$head(tags$style(
         HTML(sprintf(
-          "div.front-page>div.img-front-page { background-image: url('%s') !important; }",
-          background
+          ".navbar-default .navbar-nav>.active>a,
+          .navbar-default .navbar-nav>.active>a:hover,
+          .navbar-default .navbar-nav>.active>a:focus {
+            border-bottom: solid 5px %s !important;
+          }
+          div.front-page>div.img-front-page {
+            background-color: %s !important;
+          }
+          .dropdown-menu>.active>a,
+          .dropdown-menu>.active>a:focus,
+          .dropdown-menu>.active>a:hover {
+            border-left: solid 5px %s !important;
+          }",
+          color, color, color
         ))
       ))
-  } else {
-    NULL
-  }
+    } else {
+      NULL
+    },
+    contentDiv
+  )
 }
