@@ -182,10 +182,12 @@ birdPage <- function(title,
         HTML(sprintf(
           "
           @import url('https://fonts.googleapis.com/css2?family=%s&display=swap');
+          body {
+           font-family: %s,sans-serif !important;}
           h1, h2, h3, h4, h5, h6, p, a, text,
           .navbar-brand, .h1, .h2, .h3, .h4, .h5, .h6, .p, .a, .text {
            font-family: %s,sans-serif !important;}",
-          gsub(" ", "+", font), font
+          gsub(" ", "+", font), font, font
         ))
       ))
     },
