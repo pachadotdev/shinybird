@@ -1,5 +1,7 @@
 shinyUI(
-  birdPage(id="mainnav", "Pokemon Demo", color = "teal", font = "Roboto Condensed",
+  birdPage(id="mainnav", "Pokemon Demo", color = "teal",
+           background_color = "#fff",
+           font = "Source Sans Pro",
     tabPanel("About",
              frontPage(
                title = "About Pokemon",
@@ -11,23 +13,31 @@ shinyUI(
     tabPanelWithTitle(
       "Pokemon by type",
       "Add longer description here",
-      "Add even longer description here",
-      card(
-        title = "Card title",
-        subtitle = "Card subtitle",
-        "More text but inside the card",
+      column(12, "Add even longer description here"),
+      column(
+        6,
+        h1("Pokemon type 1"),
+        h2("Subtitle"),
+        p("More text"),
         highchartOutput("bar_chart_1")
-      )
+      ),
+      column(
+        6,
+        h1("Pokemon type 2"),
+        h2("Subtitle"),
+        p("More text"),
+        highchartOutput("bar_chart_2")
+      ),
     ),
     navbarMenu(
       "Pokemon by type (continued)",
       tabPanelWithTitle(
         "Treemap 1",
-        highchartOutput("tree_map_1")
+        column(12, highchartOutput("tree_map_1"))
       ),
       tabPanelWithTitle(
         "Treemap 2",
-        highchartOutput("tree_map_2")
+        column(12, highchartOutput("tree_map_2"))
       )
     )
   )

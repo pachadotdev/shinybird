@@ -5,6 +5,12 @@ shinyServer(function(session, input, output) {
     hc_xAxis(title = list(text = "Type")) %>%
     hc_yAxis(title = list(text = "Amount"))
 
+  bar_chart_2 <- hchart(dstype2, "bar",
+                        hcaes(x = type_2, y = n, color = color_2),
+                        name = "Pokemons") %>%
+    hc_xAxis(title = list(text = "Type")) %>%
+    hc_yAxis(title = list(text = "Amount"))
+
   tree_map_1 <- hctreemap2(
     dtm,
     group_vars = c("type_1"),
@@ -42,6 +48,8 @@ shinyServer(function(session, input, output) {
     hc_colors("transparent")
 
   output$bar_chart_1 <- renderHighchart2(bar_chart_1)
+  output$bar_chart_2 <- renderHighchart2(bar_chart_2)
+
   output$tree_map_1 <- renderHighchart2(tree_map_1)
   output$tree_map_2 <- renderHighchart2(tree_map_2)
 })

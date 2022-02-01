@@ -17,8 +17,10 @@ tabPanelWithTitle <- function(title, description = NULL, ...) {
     title,
     div(
       class = "tabTitlePanel",
-      tabTitle(title),
-      tabDesc(description)
+      column(12,
+             tabTitle(title),
+             tabDesc(description)
+      )
     ),
     ...
   )

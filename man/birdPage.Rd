@@ -18,6 +18,7 @@ birdPage(
   responsive = NULL,
   windowTitle = title,
   color = "blue",
+  background_color = "#fafbfc",
   font = NULL,
   theme = NULL
 )
@@ -71,6 +72,9 @@ Useful if `title` is not a string.}
 
 \item{color}{Optional color for the app. It can be red (default), blue ... or
 a valid hex color such as #e0245e.}
+
+\item{background_color}{Optional background color for the app. Any valid hex
+color such as #fafbfc.}
 
 \item{font}{Optional Google Font for a quick customization.}
 

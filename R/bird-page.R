@@ -39,6 +39,8 @@
 #'   Useful if `title` is not a string.
 #' @param color Optional color for the app. It can be red (default), blue ... or
 #'   a valid hex color such as #e0245e.
+#' @param background_color Optional background color for the app. Any valid hex
+#'   color such as #fafbfc.
 #' @param font Optional Google Font for a quick customization.
 #' @param theme Optional CSS file within the 'www' directory.
 #'
@@ -62,6 +64,7 @@ birdPage <- function(title,
                        responsive = NULL,
                        windowTitle = title,
                        color = "blue",
+                       background_color = "#fafbfc",
                        font = NULL,
                        theme = NULL) {
 
@@ -189,6 +192,11 @@ birdPage <- function(title,
            font-family: %s,sans-serif !important;}",
           gsub(" ", "+", font), font, font
         ))
+      ))
+    },
+    if (background_color != "fafbfc") {
+      tags$head(tags$style(
+        HTML(sprintf("body {background-color: %s !important;}", background_color))
       ))
     },
     contentDiv
