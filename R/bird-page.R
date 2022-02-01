@@ -39,7 +39,8 @@
 #'   Useful if `title` is not a string.
 #' @param color Optional color for the app. It can be red (default), blue ... or
 #'   a valid hex color such as #e0245e.
-#' @param theme Optional CSS file within the www directory.
+#' @param font Optional Google Font for a quick customization.
+#' @param theme Optional CSS file within the 'www' directory.
 #'
 #' @examples
 #' birdPage(id = "Doge", "Very Shiny")
@@ -60,30 +61,35 @@ birdPage <- function(title,
                        fluid = TRUE,
                        responsive = NULL,
                        windowTitle = title,
-                       color = "red",
+                       color = "blue",
+                       font = NULL,
                        theme = NULL) {
 
-  default_colors <- c("red", "green", "blue", "yellow", "purple")
+  default_colors <- c("pink", "green", "blue", "yellow", "red", "purple",
+                      "azure", "indigo", "orange", "lime", "teal", "cyan")
 
   if (!(color %in% default_colors) &
       !(substr(color, 1, 1) == "#" & nchar(color) <= 7)) {
-    warning("The chosen color is not a valid color and red will be used.")
-    color <- "red"
+    warning("The chosen color is not a valid color and blue will be used.")
+    color <- "blue"
   }
 
   if (color %in% default_colors) {
     color <- switch(color,
-                    "red" = "#e0245e",
-                    "green" = "#17bf63",
-                    "blue" = "#1da1f2",
-                    "yellow" = "#ffad1f",
-                    "purple" = "#794bc4"
+                    "pink" = "#ce3b6d",
+                    "green" = "#2ea578",
+                    "blue" = "#4369c4",
+                    "yellow" = "#ce3b6d",
+                    "red" = "#ce3b6d",
+                    "purple" = "#ae40c9",
+                    "azure" = "#5e97e0",
+                    "indigo" = "#5e61ea",
+                    "orange" = "#ec6c15",
+                    "lime" = "#73b819",
+                    "teal" = "#2ea578",
+                    "cyan" = "#40a1b8"
     )
   }
-
-  # import shiny internals
-  buildTabset <- getFromNamespace("buildTabset", "shiny")
-  p_randomInt <- getFromNamespace("p_randomInt", "shiny")
 
   # alias title so we can avoid conflicts w/ title in withTags
   pageTitle <- title
@@ -156,27 +162,32 @@ birdPage <- function(title,
         includeCSS(paste0("www/", theme))
       }
     ),
-    if (color != "#e0245e") {
+    if (color != "#4369c4") {
       tags$head(tags$style(
         HTML(sprintf(
           ".navbar-default .navbar-nav>.active>a,
           .navbar-default .navbar-nav>.active>a:hover,
           .navbar-default .navbar-nav>.active>a:focus {
-            border-bottom: solid 5px %s !important;
+            border-bottom: solid 2px %s !important;
           }
           div.front-page>div.img-front-page {
             background-color: %s !important;
-          }
-          .dropdown-menu>.active>a,
-          .dropdown-menu>.active>a:focus,
-          .dropdown-menu>.active>a:hover {
-            border-left: solid 5px %s !important;
           }",
-          color, color, color
+          color, color
         ))
       ))
-    } else {
-      NULL
+    },
+    if (!is.null(font)) {
+      tags$head(tags$style(
+        HTML(sprintf(
+          "
+          @import url('https://fonts.googleapis.com/css2?family=%s&display=swap');
+          h1, h2, h3, h4, h5, h6, p, a, text,
+          .navbar-brand, .h1, .h2, .h3, .h4, .h5, .h6, .p, .a, .text {
+           font-family: %s,sans-serif !important;}",
+          gsub(" ", "+", font), font
+        ))
+      ))
     },
     contentDiv
   )

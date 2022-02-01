@@ -17,7 +17,8 @@ birdPage(
   fluid = TRUE,
   responsive = NULL,
   windowTitle = title,
-  color = "red",
+  color = "blue",
+  font = NULL,
   theme = NULL
 )
 }
@@ -71,7 +72,9 @@ Useful if `title` is not a string.}
 \item{color}{Optional color for the app. It can be red (default), blue ... or
 a valid hex color such as #e0245e.}
 
-\item{theme}{Optional CSS file within the www directory.}
+\item{font}{Optional Google Font for a quick customization.}
+
+\item{theme}{Optional CSS file within the 'www' directory.}
 }
 \description{
 Create a page that contains a top level navigation bar that can be used to

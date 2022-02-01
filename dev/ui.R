@@ -1,34 +1,28 @@
 shinyUI(
-  birdPage(id="mainnav", "Doge Demo", color = "red",
-    tabPanel("Tab 1",
+  birdPage(id="mainnav", "Pokemon Demo", color = "teal", font = "Roboto Condensed",
+    tabPanel("About",
              frontPage(
-               title = "My Organization's Dashboard",
-               subtitle = "Much content, very nice",
+               title = "About Pokemon",
+               subtitle = "Back then, they were 151",
                background = "pattern-triangle.png",
                background_scale = F
              )
             ),
     tabPanelWithTitle(
-      "Tab2",
-      "insert content"
+      "Pokemon by type",
+      "Add longer description here",
+      "Add even longer description here",
+      highchartOutput("bar_chart_1")
     ),
     navbarMenu(
-      "Tab 2",
+      "Pokemon by type (continued)",
       tabPanelWithTitle(
-        "contents",
-        "goes here"
+        "Treemap 1",
+        highchartOutput("tree_map_1")
       ),
       tabPanelWithTitle(
-        "contents",
-        "goes and here"
-      ),
-      tabPanelWithTitle(
-        "contents",
-        "also here"
-      ),
-      tabPanelWithTitle(
-        "contents",
-        "and here"
+        "Treemap 2",
+        highchartOutput("tree_map_2")
       )
     )
   )
