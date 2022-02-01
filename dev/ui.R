@@ -12,7 +12,12 @@ shinyUI(
       "Pokemon by type",
       "Add longer description here",
       "Add even longer description here",
-      highchartOutput("bar_chart_1")
+      card(
+        title = "Card title",
+        subtitle = "Card subtitle",
+        "More text but inside the card",
+        highchartOutput("bar_chart_1")
+      )
     ),
     navbarMenu(
       "Pokemon by type (continued)",

@@ -2,13 +2,13 @@ body {
   background-color: #fafbfc;
   color: #50595e;
   font-size: calc(0.9em + 0.4vw);
-  font-family: Inter,-apple-system,BlinkMacSystemFont,San Francisco,Segoe UI,Roboto,Helvetica Neue,sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
   line-height: calc(0.9em + 0.8vw);
 }
 
 h1, h2, h3, h4, h5, h6, p, a, text,
 .navbar-brand, .h1, .h2, .h3, .h4, .h5, .h6, .p, .a, .text {
-  font-family: Inter,-apple-system,BlinkMacSystemFont,San Francisco,Segoe UI,Roboto,Helvetica Neue,sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
 }
 
 /* navbar */
@@ -187,7 +187,7 @@ div.front-page>div.title-front-page>h2 {
   margin: 2px 0 0;
   background: #fff;
   background-clip: border-box;
-  border-radius: 4px!important;
+  border-radius: 4px !important;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   background-clip: padding-box;
 }
@@ -208,4 +208,28 @@ div.front-page>div.title-front-page>h2 {
   font-weight: 500;
   color: #555;
   background-color: #f3f6fc;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+h3.card-title, h4.card-title {
+  margin-top: 0;
 }
